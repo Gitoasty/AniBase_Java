@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AniBase" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="org.example.javafx.Main" />
+    <module name="AniBase" />
+    <option name="VM_PARAMETERS" value="--module-path G:\JavaFX_SDK\javafx-sdk-22.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.media --add-modules javafx.web" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

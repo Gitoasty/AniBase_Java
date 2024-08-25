@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="menuPane" vgap="10.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.MenuController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="125.0" minHeight="-Infinity" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="81.0" minHeight="-Infinity" vgrow="ALWAYS" />
+      <RowConstraints minHeight="-Infinity" vgrow="ALWAYS" />
+      <RowConstraints minHeight="-Infinity" vgrow="ALWAYS" />
+      <RowConstraints minHeight="-Infinity" vgrow="ALWAYS" />
+      <RowConstraints minHeight="-Infinity" vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <ImageView fx:id="menuBackground" cache="true" cacheHint="SCALE" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" styleClass="menu_bg" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowSpan="2147483647" GridPane.vgrow="ALWAYS">
+         <image>
+            <Image url="@../../../menu.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <Button fx:id="anime" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Anime" />
+      <Button fx:id="studio" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Studio" GridPane.rowIndex="1" />
+      <Button fx:id="years" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Years" GridPane.rowIndex="2" />
+      <Button fx:id="genres" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Genres" GridPane.rowIndex="3" />
+      <Button fx:id="by_years" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="By years" GridPane.rowIndex="4" />
+      <Button fx:id="exit" mnemonicParsing="false" onAction="#closeApp" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Exit" GridPane.rowIndex="5" />
+   </children>
+</GridPane>
