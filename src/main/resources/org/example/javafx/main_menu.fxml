@@ -29,11 +29,11 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <Button fx:id="anime" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Anime" />
-      <Button fx:id="studio" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Studio" GridPane.rowIndex="1" />
-      <Button fx:id="years" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Years" GridPane.rowIndex="2" />
-      <Button fx:id="genres" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Genres" GridPane.rowIndex="3" />
-      <Button fx:id="by_years" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="By years" GridPane.rowIndex="4" />
-      <Button fx:id="exit" mnemonicParsing="false" onAction="#closeApp" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Exit" GridPane.rowIndex="5" />
+      <Button fx:id="anime" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Anime" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+      <Button fx:id="studio" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Studio" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+      <Button fx:id="years" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Years" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+      <Button fx:id="genres" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Genres" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+      <Button fx:id="by_years" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="By years" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
+      <Button fx:id="exit" mnemonicParsing="false" onAction="#closeApp" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Exit" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
    </children>
 </GridPane>
