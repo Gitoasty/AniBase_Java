@@ -1,4 +1,11 @@
 .menu_buttons {
     -fx-background-color: pink;
     -fx-opacity: 0.75;
+    -fx-background-radius: 25px;
+}
+
+.animeLabels {
+    -fx-background-color: purple;
+    -fx-font-size: 40;
+    -fx-color: white;
 }
