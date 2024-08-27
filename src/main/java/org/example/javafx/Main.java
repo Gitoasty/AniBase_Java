@@ -16,7 +16,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.sql.*; 
+import java.sql.*;
 
 public class Main extends Application {
     public static void main(String[] args) {

@@ -1,4 +1,26 @@
 .menu_buttons {
     -fx-background-color: pink;
     -fx-opacity: 0.75;
+    -fx-background-radius: 25px;
+}
+
+.theList {
+    -fx-background-color: purple;
+    -fx-opacity: 0.65;
+    -fx-font-size: 20px;
+}
+
+.animeLabels {
+    -fx-background-color: purple;
+    -fx-background-radius: 30px;
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+    -fx-opacity: 0.65;
+}
+
+.tableButtons {
+    -fx-background-color: purple;
+    -fx-opacity: 0.75;
+    -fx-text-fill: white;
+    -fx-background-radius: 20px;
 }

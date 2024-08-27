@@ -43,7 +43,6 @@ public class MenuController implements Initializable{
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
-
     }
 
     @FXML
