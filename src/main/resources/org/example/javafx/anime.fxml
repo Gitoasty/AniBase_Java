@@ -2,35 +2,49 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.AnimeController">
+<AnchorPane fx:id="animePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.AnimeController">
    <children>
       <ImageView fx:id="animeBackground" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
             <Image url="@../../../anime.jpg" />
          </image>
       </ImageView>
-      <VBox prefHeight="400.0" prefWidth="300.0" />
-      <Label layoutX="294.0" layoutY="14.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Label" />
-      <Label layoutX="294.0" layoutY="64.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Label" />
-      <Label layoutX="294.0" layoutY="114.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Label" />
-      <Label layoutX="294.0" layoutY="164.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Label" />
-      <Label layoutX="294.0" layoutY="214.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Label" />
-      <TextField layoutX="394.0" layoutY="14.0" prefHeight="50.0" prefWidth="200.0" />
-      <TextField layoutX="394.0" layoutY="64.0" prefHeight="50.0" prefWidth="200.0" />
-      <TextField layoutX="394.0" layoutY="114.0" prefHeight="50.0" prefWidth="200.0" />
-      <TextField layoutX="394.0" layoutY="164.0" prefHeight="50.0" prefWidth="200.0" />
-      <TextField layoutX="394.0" layoutY="214.0" prefHeight="50.0" prefWidth="200.0" />
-      <Button layoutX="294.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" text="Button" />
-      <Button layoutX="354.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" text="Button" />
-      <Button layoutX="414.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" text="Button" />
-      <Button layoutX="474.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" text="Button" />
-      <Button layoutX="534.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" text="Button" />
+      <Label alignment="CENTER" layoutX="294.0" layoutY="14.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Name:">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="294.0" layoutY="64.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Original">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="294.0" layoutY="114.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Studio:">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="294.0" layoutY="164.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Genre">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="294.0" layoutY="214.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Year:">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <TextField fx:id="name" layoutX="394.0" layoutY="14.0" prefHeight="50.0" prefWidth="200.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
+      <TextField fx:id="original" layoutX="394.0" layoutY="64.0" prefHeight="50.0" prefWidth="200.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
+      <TextField fx:id="studio" layoutX="394.0" layoutY="114.0" prefHeight="50.0" prefWidth="200.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
+      <TextField fx:id="genre" layoutX="394.0" layoutY="164.0" prefHeight="50.0" prefWidth="200.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
+      <TextField fx:id="year" layoutX="394.0" layoutY="214.0" prefHeight="50.0" prefWidth="200.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
+      <Button fx:id="saveButton" layoutX="294.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" onAction="#newRow" prefHeight="50.0" prefWidth="60.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Save" />
+      <Button fx:id="editButton" layoutX="372.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" onAction="#editRow" prefHeight="50.0" prefWidth="60.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Edit" />
+      <Button fx:id="deleteButton" layoutX="454.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" onAction="#deleteRow" prefHeight="50.0" prefWidth="60.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Delete" />
+      <Button fx:id="backButton" layoutX="534.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="60.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Back" />
+      <ListView fx:id="theList" prefHeight="400.0" prefWidth="290.0" styleClass="theList" stylesheets="@../../../pretty.css" />
    </children>
 </AnchorPane>
