@@ -27,6 +27,7 @@
             <Font size="24.0" />
          </font>
       </Label>
+
       <TextField fx:id="studio" layoutX="447.0" layoutY="28.0" prefHeight="86.0" prefWidth="147.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
       <TextField fx:id="year" layoutX="447.0" layoutY="128.0" prefHeight="86.0" prefWidth="147.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
       <Button fx:id="saveButton" layoutX="294.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" onAction="#newRow" prefHeight="50.0" prefWidth="60.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Save" />
