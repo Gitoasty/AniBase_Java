@@ -61,7 +61,23 @@ public class AnimeController implements Initializable {
         }
     }
 
+    private void insertStudio() {
+        String sql = "INSERT INTO studio (studio) VALUES(?)";
+
+        try (Connection conn = DriverManager.getConnection(dbURL)) {
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                pstmt.setString(1, studio.getText());
+                pstmt.executeUpdate();
+            }
+            System.out.println("Studio added");
+        } catch (SQLException e) {
+            System.out.println("Studio already exists");
+        }
+    }
+
     public void newRow(ActionEvent event) throws SQLException {
+
+        /* Adds row to anime */
         String sql = "INSERT INTO " + tableName + " (name, original, studio, genre, year) VALUES(?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(dbURL);
@@ -72,10 +88,14 @@ public class AnimeController implements Initializable {
             pstmt.setString(4, genre.getText());
             pstmt.setString(5, year.getText());
             pstmt.executeUpdate();
+            pstmt.close();
+            conn.close();
             System.out.println("Added " + name.getText() + " to " + tableName);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        insertStudio();
+
         updateList();
     }
 
@@ -146,7 +166,8 @@ public class AnimeController implements Initializable {
                     +"original TEXT NOT NULL, "
                     +"studio VARCHAR(30) NOT NULL, "
                     +"genre VARCHAR(20) NOT NULL, "
-                    +"year VARCHAR(4) NOT NULL "
+                    +"year VARCHAR(4) NOT NULL, "
+                    +"favorite INTEGER DEFAULT 0"
                     +")";
 
             stat.executeUpdate(createtableSQL);
