@@ -17,29 +17,29 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.*;
 import java.net.URL;
+import java.sql.*;
 import java.util.ResourceBundle;
 
-public class StudioController implements Initializable {
+public class YearController implements Initializable {
 
     @FXML
-    private AnchorPane studioPane;
+    private AnchorPane yearPane;
     @FXML
-    private ImageView studioBackground;
+    private ImageView yearBackground;
     @FXML
     private ListView<String> theList;
     @FXML
-    private TextField studio, year;
+    private TextField year;
 
     private String dbURL = "jdbc:sqlite:database.db";
-    private String tableName = "studio";
+    private String tableName = "years";
     private Connection conn = null;
     private Statement stat = null;
 
     public void updateList() {
         theList.getItems().clear();
-        String sql = "SELECT studio FROM " + tableName;
+        String sql = "SELECT year FROM " + tableName;
 
         try {
             Connection conn = DriverManager.getConnection(dbURL);
@@ -47,8 +47,8 @@ public class StudioController implements Initializable {
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                if (!theList.getItems().contains(rs.getString("studio"))) {
-                    theList.getItems().add(rs.getString("studio"));
+                if (!theList.getItems().contains(rs.getString("year"))) {
+                    theList.getItems().add(rs.getString("year"));
                 }
             }
         } catch (SQLException e) {
@@ -57,30 +57,13 @@ public class StudioController implements Initializable {
     }
 
     public void newRow(ActionEvent event) throws SQLException {
-        String sql = "INSERT INTO " + tableName + " (studio, year) VALUES(?, ?)";
+        String sql = "INSERT INTO " + tableName + " (year) VALUES(?)";
 
         try (Connection conn = DriverManager.getConnection(dbURL);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, studio.getText());
-            pstmt.setString(2, year.getText());
-            pstmt.executeUpdate();
-            System.out.println("Added " + studio.getText() + " to " + tableName);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        updateList();
-    }
-
-    public void editRow(ActionEvent event) throws SQLException {
-        String sql = "UPDATE " + tableName + " SET year = ? WHERE studio = ?";
-
-        try (Connection conn = DriverManager.getConnection(dbURL);
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
             pstmt.setString(1, year.getText());
-            pstmt.setString(2, theList.getSelectionModel().getSelectedItem());
-
             pstmt.executeUpdate();
+            System.out.println("Added " + year.getText() + " to " + tableName);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -88,7 +71,7 @@ public class StudioController implements Initializable {
     }
 
     public void deleteRow(ActionEvent event) throws SQLException {
-        String sql = "DELETE FROM " + tableName + " WHERE studio = ?";
+        String sql = "DELETE FROM " + tableName + " WHERE year = ?";
 
         try (Connection conn = DriverManager.getConnection(dbURL);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -113,16 +96,15 @@ public class StudioController implements Initializable {
         stage.show();
     }
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        studioPane.widthProperty().addListener((ChangeListener<? super Number>) new ChangeListener<Number>() {
+        yearPane.widthProperty().addListener((ChangeListener<? super Number>) new ChangeListener<Number>() {
             /* Adjusts the ImageView size to match window size when resizing */
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                studioBackground.setFitWidth(studioPane.getWidth());
-                studioBackground.setFitHeight(studioPane.getHeight());
+                yearBackground.setFitWidth(yearPane.getWidth());
+                yearBackground.setFitHeight(yearPane.getHeight());
             }
         });
 
@@ -132,8 +114,7 @@ public class StudioController implements Initializable {
             stat = conn.createStatement();
 
             String createtableSQL = "CREATE TABLE IF NOT EXISTS " + tableName + " ("
-                    +"studio VARCHAR(30) PRIMARY KEY NOT NULL, "
-                    +"year VARCHAR(4) NOT NULL DEFAULT 0000, "
+                    +"year VARCHAR(4) PRIMARY KEY NOT NULL, "
                     +"favorite INGETER DEFAULT 0 "
                     +")";
 
