@@ -34,8 +34,6 @@ public class AnimeController implements Initializable {
     private ListView<String> theList;
     @FXML
     private TextField name, original, studio, genre, year;
-    @FXML
-    private Button saveButton, editButton, deleteButton, backButton;
 
     private String dbURL = "jdbc:sqlite:database.db";
     private String tableName = "anime";
@@ -75,6 +73,20 @@ public class AnimeController implements Initializable {
         }
     }
 
+    private void insertYear() {
+        String sql = "INSERT INTO years (year) VALUES(?)";
+
+        try (Connection conn = DriverManager.getConnection(dbURL)) {
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                pstmt.setString(1, year.getText());
+                pstmt.executeUpdate();
+            }
+            System.out.println("Year added");
+        } catch (SQLException e) {
+            System.out.println("Year already exists");
+        }
+    }
+
     public void newRow(ActionEvent event) throws SQLException {
 
         /* Adds row to anime */
@@ -95,6 +107,7 @@ public class AnimeController implements Initializable {
             System.out.println(e.getMessage());
         }
         insertStudio();
+        insertYear();
 
         updateList();
     }
