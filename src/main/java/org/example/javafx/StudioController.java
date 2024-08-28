@@ -135,7 +135,7 @@ public class StudioController implements Initializable {
 
             String createtableSQL = "CREATE TABLE IF NOT EXISTS " + tableName + " ("
                     +"studio VARCHAR(30) PRIMARY KEY NOT NULL, "
-                    +"year VARCHAR(4) NOT NULL "
+                    +"year VARCHAR(4) NOT NULL DEFAULT 0000"
                     +")";
 
             stat.executeUpdate(createtableSQL);
