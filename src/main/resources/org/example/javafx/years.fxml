@@ -17,7 +17,7 @@
             <Image url="@../../../year.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="293.0" layoutY="55.0" prefHeight="147.0" prefWidth="158.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Year founded:" wrapText="true">
+      <Label alignment="CENTER" layoutX="293.0" layoutY="55.0" prefHeight="147.0" prefWidth="158.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Year:" wrapText="true">
          <font>
             <Font size="24.0" />
          </font>

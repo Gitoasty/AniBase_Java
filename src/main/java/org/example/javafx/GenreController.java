@@ -20,25 +20,25 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class YearController implements Initializable {
+public class GenreController implements Initializable {
 
     @FXML
-    private AnchorPane yearPane;
+    private AnchorPane genrePane;
     @FXML
-    private ImageView yearBackground;
+    private ImageView genreBackground;
+    @FXML
+    private TextField genre;
     @FXML
     private ListView<String> theList;
-    @FXML
-    private TextField year;
 
     private String dbURL = "jdbc:sqlite:database.db";
-    private String tableName = "years";
+    private String tableName = "genre";
     private Connection conn = null;
     private Statement stat = null;
 
     public void updateList() {
         theList.getItems().clear();
-        String sql = "SELECT year FROM " + tableName;
+        String sql = "SELECT genre FROM " + tableName;
 
         try {
             Connection conn = DriverManager.getConnection(dbURL);
@@ -46,8 +46,8 @@ public class YearController implements Initializable {
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                if (!theList.getItems().contains(rs.getString("year"))) {
-                    theList.getItems().add(rs.getString("year"));
+                if (!theList.getItems().contains(rs.getString("genre"))) {
+                    theList.getItems().add(rs.getString("genre"));
                 }
             }
         } catch (SQLException e) {
@@ -56,21 +56,20 @@ public class YearController implements Initializable {
     }
 
     public void newRow(ActionEvent event) throws SQLException {
-        String sql = "INSERT INTO " + tableName + " (year) VALUES(?)";
+        String sql = "INSERT INTO " + tableName + " (genre) VALUES(?)";
 
         try (Connection conn = DriverManager.getConnection(dbURL);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, year.getText());
+            pstmt.setString(1, genre.getText());
             pstmt.executeUpdate();
-            System.out.println("Added " + year.getText() + " to " + tableName);
+            System.out.println("Added " + genre.getText() + " to " + tableName);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         updateList();
     }
-
     public void deleteRow(ActionEvent event) throws SQLException {
-        String sql = "DELETE FROM " + tableName + " WHERE year = ?";
+        String sql = "DELETE FROM " + tableName + " WHERE genre = ?";
 
         try (Connection conn = DriverManager.getConnection(dbURL);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -98,12 +97,12 @@ public class YearController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        yearPane.widthProperty().addListener((ChangeListener<? super Number>) new ChangeListener<Number>() {
+        genrePane.widthProperty().addListener((ChangeListener<? super Number>) new ChangeListener<Number>() {
             /* Adjusts the ImageView size to match window size when resizing */
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                yearBackground.setFitWidth(yearPane.getWidth());
-                yearBackground.setFitHeight(yearPane.getHeight());
+                genreBackground.setFitWidth(genrePane.getWidth());
+                genreBackground.setFitHeight(genrePane.getHeight());
             }
         });
 
@@ -113,7 +112,7 @@ public class YearController implements Initializable {
             stat = conn.createStatement();
 
             String createtableSQL = "CREATE TABLE IF NOT EXISTS " + tableName + " ("
-                    +"year VARCHAR(4) PRIMARY KEY NOT NULL, "
+                    +"genre VARCHAR(20) PRIMARY KEY NOT NULL, "
                     +"favorite INGETER DEFAULT 0 "
                     +")";
 
