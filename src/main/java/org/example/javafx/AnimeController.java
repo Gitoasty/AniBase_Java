@@ -71,6 +71,20 @@ public class AnimeController implements Initializable {
         }
     }
 
+    private void insertGenre() {
+        String sql = "INSERT INTO genre (genre) VALUES(?)";
+
+        try (Connection conn = DriverManager.getConnection(dbURL)) {
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                pstmt.setString(1, genre.getText());
+                pstmt.executeUpdate();
+            }
+            System.out.println("Genre added");
+        } catch (SQLException e) {
+            System.out.println("Genre already exists");
+        }
+    }
+
     private void insertYear() {
         String sql = "INSERT INTO years (year) VALUES(?)";
 
@@ -106,6 +120,7 @@ public class AnimeController implements Initializable {
         }
         insertStudio();
         insertYear();
+        insertGenre();
 
         updateList();
     }
@@ -126,6 +141,10 @@ public class AnimeController implements Initializable {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        insertStudio();
+        insertYear();
+        insertGenre();
+
         updateList();
     }
 

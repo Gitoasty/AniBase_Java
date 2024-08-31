@@ -37,6 +37,10 @@ public class Main extends Application {
             Scene scene = new Scene(root);
             scene.getStylesheets().add("pretty.css");
 
+            Image icon = new Image("nico.png");
+            stage.getIcons().add(icon);
+            stage.setTitle("Anibase 1.0");
+
             stage.setMinHeight(425);
             stage.setMinWidth(600);
             stage.setScene(scene);
