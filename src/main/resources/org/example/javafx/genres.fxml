@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="genrePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.GenreController">
    <children>
       <ImageView fx:id="genreBackground" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
@@ -22,7 +21,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="genre" layoutX="454.0" layoutY="59.0" prefHeight="147.0" prefWidth="144.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
+      <TextField fx:id="genre" layoutX="454.0" layoutY="59.0" onAction="#newRow" prefHeight="147.0" prefWidth="144.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
       <Button fx:id="saveButton" layoutX="294.0" layoutY="297.0" minWidth="49.0" mnemonicParsing="false" onAction="#newRow" prefHeight="80.0" prefWidth="96.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Save" />
       <Button fx:id="deleteButton" layoutX="397.0" layoutY="297.0" minWidth="49.0" mnemonicParsing="false" onAction="#deleteRow" prefHeight="80.0" prefWidth="96.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Delete" />
       <Button fx:id="backButton" layoutX="502.0" layoutY="297.0" minWidth="49.0" mnemonicParsing="false" onAction="#goBack" prefHeight="80.0" prefWidth="96.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Back" />

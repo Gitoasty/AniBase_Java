@@ -28,7 +28,7 @@
       </Label>
 
       <TextField fx:id="studio" layoutX="447.0" layoutY="28.0" prefHeight="86.0" prefWidth="147.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
-      <TextField fx:id="year" layoutX="447.0" layoutY="128.0" prefHeight="86.0" prefWidth="147.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
+      <TextField fx:id="year" layoutX="447.0" layoutY="128.0" onAction="#newRow" prefHeight="86.0" prefWidth="147.0" styleClass="itemInputs" stylesheets="@../../../pretty.css" />
       <Button fx:id="saveButton" layoutX="294.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" onAction="#newRow" prefHeight="50.0" prefWidth="60.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Save" />
       <Button fx:id="editButton" layoutX="372.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" onAction="#editRow" prefHeight="50.0" prefWidth="60.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Edit" />
       <Button fx:id="deleteButton" layoutX="454.0" layoutY="327.0" minWidth="49.0" mnemonicParsing="false" onAction="#deleteRow" prefHeight="50.0" prefWidth="60.0" styleClass="tableButtons" stylesheets="@../../../pretty.css" text="Delete" />
