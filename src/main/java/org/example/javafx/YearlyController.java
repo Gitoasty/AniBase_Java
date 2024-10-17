@@ -1,11 +1,8 @@
 package org.example.javafx;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,12 +13,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.*;
 import java.util.Objects;
-import java.util.ResourceBundle;
 
-public class YearlyController implements Initializable {
+public class YearlyController {
 
     @FXML
     private AnchorPane yearlyPane;
@@ -228,18 +223,5 @@ public class YearlyController implements Initializable {
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        yearlyPane.widthProperty().addListener((ChangeListener<? super Number>) new ChangeListener<Number>() {
-            /* Adjusts the ImageView size to match window size when resizing */
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                yearlyBackground.setFitWidth(yearlyPane.getWidth());
-                yearlyBackground.setFitHeight(yearlyPane.getHeight());
-            }
-        });
     }
 }

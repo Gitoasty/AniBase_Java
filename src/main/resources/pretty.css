@@ -1,8 +1,19 @@
+.menuPane {
+    -fx-background-image: url("/menu.jpg");
+    -fx-background-size: cover;
+}
+
 .menu_buttons {
     -fx-background-color: pink;
     -fx-opacity: 0.75;
     -fx-background-radius: 25px;
 }
+
+.animePane {
+    -fx-background-image: url("/anime.jpg");
+    -fx-background-size: cover;
+}
+
 
 .theList {
     -fx-background-color: purple;
@@ -23,4 +34,24 @@
     -fx-opacity: 0.75;
     -fx-text-fill: white;
     -fx-background-radius: 20px;
+}
+
+.studioPane {
+    -fx-background-image: url("/studio.jpg");
+    -fx-background-size: cover;
+}
+
+.yearPane {
+    -fx-background-image: url("/year.jpg");
+    -fx-background-size: cover;
+}
+
+.genrePane {
+    -fx-background-image: url("/genre.jpg");
+    -fx-background-size: cover;
+}
+
+.yearlyPane {
+    -fx-background-image: url("/yearly.jpg");
+    -fx-background-size: cover;
 }

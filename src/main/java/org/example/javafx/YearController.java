@@ -1,7 +1,5 @@
 package org.example.javafx;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -97,15 +95,6 @@ public class YearController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        yearPane.widthProperty().addListener((ChangeListener<? super Number>) new ChangeListener<Number>() {
-            /* Adjusts the ImageView size to match window size when resizing */
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                yearBackground.setFitWidth(yearPane.getWidth());
-                yearBackground.setFitHeight(yearPane.getHeight());
-            }
-        });
 
         try {
             conn = DriverManager.getConnection(dbURL);
