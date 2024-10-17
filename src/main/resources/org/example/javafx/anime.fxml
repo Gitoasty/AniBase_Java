@@ -4,18 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="animePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.AnimeController">
+<AnchorPane fx:id="animePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="animePane" stylesheets="@../../../pretty.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.AnimeController">
    <children>
-      <ImageView fx:id="animeBackground" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../../anime.jpg" />
-         </image>
-      </ImageView>
       <Label alignment="CENTER" layoutX="294.0" layoutY="14.0" prefHeight="50.0" prefWidth="100.0" styleClass="animeLabels" stylesheets="@../../../pretty.css" text="Name:">
          <font>
             <Font size="24.0" />
