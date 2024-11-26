@@ -1,12 +1,14 @@
 .menuPane {
     -fx-background-image: url("/menu.jpg");
     -fx-background-size: cover;
+    -fx-width: 100%;
 }
 
 .menu_buttons {
     -fx-background-color: pink;
     -fx-opacity: 0.75;
     -fx-background-radius: 25px;
+    -fx-padding: 10px;
 }
 
 .animePane {

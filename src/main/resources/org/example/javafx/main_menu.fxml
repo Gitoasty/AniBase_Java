@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="menuPane" prefHeight="400.0" prefWidth="600.0" styleClass="menuPane" stylesheets="@../../../pretty.css" vgap="10.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.MenuController">
+<GridPane fx:id="menuPane" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="612.0" styleClass="menuPane" stylesheets="@../../../pretty.css" vgap="15.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.MenuController">
    <columnConstraints>
       <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
    </columnConstraints>
@@ -18,11 +18,11 @@
       <RowConstraints minHeight="-Infinity" vgrow="ALWAYS" />
    </rowConstraints>
    <children>
-      <Button fx:id="anime" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Anime" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
-      <Button fx:id="studio" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Studio" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
-      <Button fx:id="years" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Years" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-      <Button fx:id="genres" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Genres" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
-      <Button fx:id="by_years" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="By years" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
-      <Button fx:id="exit" mnemonicParsing="false" onAction="#closeApp" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Exit" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
+      <Button fx:id="anime" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Anime" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+      <Button fx:id="studio" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Studio" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+      <Button fx:id="years" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Years" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+      <Button fx:id="genres" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Genres" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
+      <Button fx:id="by_years" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#change" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="By years" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+      <Button fx:id="exit" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#closeApp" prefHeight="55.0" prefWidth="132.0" styleClass="menu_buttons" stylesheets="@../../../pretty.css" text="Exit" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
    </children>
 </GridPane>
