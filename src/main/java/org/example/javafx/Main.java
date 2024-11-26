@@ -3,17 +3,10 @@ package org.example.javafx;
 //put this in front of controller name: org.example.javafx.
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.sql.*;
@@ -39,7 +32,7 @@ public class Main extends Application {
 
             Image icon = new Image("nico.png");
             stage.getIcons().add(icon);
-            stage.setTitle("Anibase 1.0");
+            stage.setTitle("Anibase 1.1");
 
             stage.setMinHeight(425);
             stage.setMinWidth(600);

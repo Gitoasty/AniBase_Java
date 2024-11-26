@@ -6,11 +6,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.event.ActionEvent;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,13 +27,17 @@ import java.util.ResourceBundle;
 public class AnimeController implements Initializable {
 
     @FXML
-    private AnchorPane animePane;
+    private StackPane animePane;
     @FXML
-    private ImageView animeBackground;
+    private GridPane pane;
     @FXML
     private ListView<String> theList;
     @FXML
     private TextField name, original, studio, genre, year;
+    @FXML
+    private Label nLabel, oLabel, sLabel, gLabel, yLabel;
+    @FXML
+    private Button saveButton, editButton, deleteButton, backButton;
 
     private String dbURL = "jdbc:sqlite:database.db";
     private String tableName = "anime";
@@ -206,5 +214,34 @@ public class AnimeController implements Initializable {
             }
         }
         updateList();
+
+        //private Button saveButton, editButton, deleteButton, backButton;
+
+        {
+            //dedicated variables for easier control of font size
+            double font = 0.03;
+            double button_font = 0.02;
+
+            { //sets the font of the elements
+                theList.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+
+                name.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+                original.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+                studio.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+                genre.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+                year.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+
+                nLabel.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+                oLabel.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+                sLabel.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+                gLabel.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+                yLabel.styleProperty().bind(animePane.widthProperty().multiply(font).asString("-fx-font-size: %.2fpx;"));
+
+                saveButton.styleProperty().bind(animePane.widthProperty().multiply(button_font).asString("-fx-font-size: %.2fpx;"));
+                editButton.styleProperty().bind(animePane.widthProperty().multiply(button_font).asString("-fx-font-size: %.2fpx;"));
+                deleteButton.styleProperty().bind(animePane.widthProperty().multiply(button_font).asString("-fx-font-size: %.2fpx;"));
+                backButton.styleProperty().bind(animePane.widthProperty().multiply(button_font).asString("-fx-font-size: %.2fpx;"));
+            }
+        }
     }
 }
